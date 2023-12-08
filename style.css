@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#quiz-form {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+#quiz-form input,
+#quiz-form select,
+#quiz-form button {
+    padding: 10px;
+    margin: 5px;
+    display: block;
+    width: 95%;
+}
+
+#answer-type-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#answer-type-container button {
+    width: auto;
+    padding: 10px 20px;
+}
+
+.match-question,
+.answer-option {
+    margin-bottom: 10px;
+}
+
+.match-question input,
+.answer-option input {
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.match-question select {
+    padding: 10px;
+}
+
+.question-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    font-weight: bold;
+}
+
+.question-points {
+    font-weight: bold;
+    background-color: #e4e4e4;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.question-body {
+    border-top: 2px solid #000;
+    padding-top: 15px;
+}
+
+.question-text {
+    margin-bottom: 20px;
+}
+
+.question-options label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.question-options input[type="radio"],
+.question-options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.correct-answers {
+    margin-top: 10px;
+    font-style: italic;
+}
+.match-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.match-term {
+    /* If you want to ensure the term takes up a certain amount of space */
+    flex-basis: 50%;
+}
+
+.match-select-container {
+    flex-basis: 50%;
+    /* Align the dropdown to the right */
+    display: flex;
+    justify-content: flex-end;
+}
+
