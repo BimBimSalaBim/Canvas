@@ -18,7 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         saveButton.addEventListener('click', saveQuestions);
     }
     
-
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
     function addQuestion() {
         if (questionText.value.trim() === '') {
             alert('Please enter a question');
@@ -259,6 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadQuestionsToDOM(questions) {
+        shuffleArray(questions);
         const quizContainer = document.getElementById('quiz-container');
         quizContainer.innerHTML = ''; // Clear existing questions
     
@@ -266,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let optionsHTML = '';
             const formattedQuestionText = question.questionText.replace(/\n/g, '<br>');
             if (question.type === 'radio' || question.type === 'checkbox') {
+                shuffleArray(question.answers);
                 question.answers.forEach((answer, answerIndex) => {
                     optionsHTML += `
                         <label>
