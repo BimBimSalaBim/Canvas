@@ -149,25 +149,26 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function checkOptions(question, questionType) {
         const options = question.querySelectorAll(`input[type="${questionType}"]`);
-    
+        var returnVal = true;
         for (let option of options) {
             const isCorrect = option.getAttribute('iscorrect') === 'true';
-    
+            if( isCorrect){option.closest('label').setAttribute('style', 'background-color: #a7bc8a;')}else{option.closest('label').setAttribute('style', 'background-color: #ff4554 ;')}
             // For radio buttons: if an incorrect option is selected or a correct one is not, return false
             if (questionType === 'radio') {
                 if ((isCorrect && !option.checked) || (!isCorrect && option.checked)) {
-                    return false;
+                    // return false;
+                    returnVal = false;
                 }
             }
     
             // For checkboxes: if the checked state doesn't match its correctness, return false
             if (questionType === 'checkbox' && ((isCorrect && !option.checked) || (!isCorrect && option.checked))) {
-                return false;
+                returnVal = false;
             }
         }
     
         // If all conditions are met, return true
-        return true;
+        return returnVal;
     }
     
     
